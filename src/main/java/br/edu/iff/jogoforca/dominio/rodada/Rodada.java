@@ -1,5 +1,7 @@
 package br.edu.iff.jogoforca.dominio.rodada;
 
-public class Rodada {
+import br.edu.iff.dominio.ObjetoDominioImpl;
+
+public class Rodada extends ObjetoDominioImpl {
 
 }

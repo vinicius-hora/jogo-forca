@@ -4,19 +4,17 @@ import javax.management.ObjectInstance;
 
 import br.edu.iff.jogoforca.dominio.boneco.Boneco;
 
-public class BonecoTexto<SoleInstance> implements Boneco {
+public class BonecoTexto implements Boneco {
 	
-	private SoleInstance  soleInstance;
+	private BonecoTexto  bonecoTexto = new BonecoTexto();
 
-	public SoleInstance getSoleInstance() {
-		return soleInstance;
-	}
-
-	private BonecoTexto(SoleInstance soleInstance) {
+	
+	
+	
+	private BonecoTexto() {
 		
-		this.soleInstance = soleInstance;
 	}
-	
+
 	public void Exibir(Object object, int partes) {
 		if (partes == 1) {
 			System.out.println("------------------------");
@@ -91,6 +89,10 @@ public class BonecoTexto<SoleInstance> implements Boneco {
 		if (partes == 10) {
 			
 		}
+	}
+
+	public BonecoTexto getBonecoTexto() {
+		return bonecoTexto;
 	}
 	
 	

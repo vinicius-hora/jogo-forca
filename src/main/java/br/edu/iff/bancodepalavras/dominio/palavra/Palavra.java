@@ -1,5 +1,7 @@
 package br.edu.iff.bancodepalavras.dominio.palavra;
 
-public class Palavra {
+import br.edu.iff.dominio.ObjetoDominioImpl;
+
+public class Palavra extends ObjetoDominioImpl {
 
 }
