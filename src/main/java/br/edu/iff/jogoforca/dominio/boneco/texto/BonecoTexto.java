@@ -1,21 +1,26 @@
 package br.edu.iff.jogoforca.dominio.boneco.texto;
 
-import javax.management.ObjectInstance;
-
 import br.edu.iff.jogoforca.dominio.boneco.Boneco;
 
 public class BonecoTexto implements Boneco {
 	
-	private BonecoTexto  bonecoTexto = new BonecoTexto();
+	private static BonecoTexto  soleInstance = null;
 
-	
+	public static BonecoTexto getSoleInstance() {
+        if (soleInstance == null) {
+            soleInstance = new BonecoTexto();
+        }
+
+        return soleInstance;
+    }
 	
 	
 	private BonecoTexto() {
 		
 	}
-
-	public void Exibir(Object object, int partes) {
+	
+	@Override
+	public void exibir(Object object, int partes) {
 		if (partes == 1) {
 			System.out.println("------------------------");
 			System.out.println("|----------------------|");
@@ -91,12 +96,9 @@ public class BonecoTexto implements Boneco {
 		}
 	}
 
-	public BonecoTexto getBonecoTexto() {
-		return bonecoTexto;
-	}
+
 	
-	
-	
+
 	
 	
 	

@@ -3,9 +3,6 @@ package br.edu.iff.jogoforca.dominio.jogador;
 import br.edu.iff.dominio.ObjetoDominioImpl;
 
 public class Jogador extends ObjetoDominioImpl {
-
-	
-
 	
 
 	public Jogador(Long id) {
@@ -32,17 +29,17 @@ public class Jogador extends ObjetoDominioImpl {
 	}
 
 	public void setPutuacao(int putuacao) {
-		this.putuacao += putuacao;
+		this.putuacao = putuacao;
 	}
 	
-	public Jogador Criar(Long id, String nome) {
+	public static Jogador Criar(Long id, String nome) {
 		Jogador jogador = new Jogador(id, nome);
 		return jogador;
 		
 		
 	}
 	
-	public Jogador Recostruir(Long id, String nome, int pontuacao) {
+	public static Jogador Recostruir(Long id, String nome, int pontuacao) {
 		Jogador jogador = new Jogador(id, nome, pontuacao);
 		return jogador;
 		

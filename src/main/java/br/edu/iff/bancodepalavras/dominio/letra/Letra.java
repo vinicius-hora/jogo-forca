@@ -2,7 +2,7 @@ package br.edu.iff.bancodepalavras.dominio.letra;
 
 import java.util.List;
 
-public class Letra {
+public abstract class Letra {
 	
 	private char codigo;
 
@@ -16,15 +16,12 @@ public class Letra {
 		this.codigo = codigo;
 	}
 	
-	public <T> void Exibir(List<T> list){
-		
-	}
 	
-	
+	public abstract void exibir(Object object);
 
 	@Override
 	public final String toString() {
-		return "Letra [codigo=" + codigo + "]";
+		return "Letra" + codigo ;
 	}
 
 	@Override

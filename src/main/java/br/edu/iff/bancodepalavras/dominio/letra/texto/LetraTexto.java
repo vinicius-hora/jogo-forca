@@ -6,15 +6,16 @@ import br.edu.iff.bancodepalavras.dominio.letra.Letra;
 
 public class LetraTexto extends Letra {
 	
-	@Override
-	public <T> void Exibir(List<T> list) {
-		
-		super.Exibir(list);
-	}
+	
 
-	public LetraTexto(char codigo) {
+	protected LetraTexto(char codigo) {
 		super(codigo);
-		// TODO Auto-generated constructor stub
+		
+	}
+	
+	@Override
+	public void exibir(Object object) {
+		System.out.println(this.getCodigo());
 	}
 
 	
