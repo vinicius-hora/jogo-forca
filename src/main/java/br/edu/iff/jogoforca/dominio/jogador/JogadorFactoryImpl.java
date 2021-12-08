@@ -42,6 +42,8 @@ public class JogadorFactoryImpl extends EntityFactory implements JogadorFactory 
 			throw new RuntimeException ("Ocorreu um erro ao tentar salvar o jogador");
 			
 		}
+		
+		return jogador;
 	}
 
 }

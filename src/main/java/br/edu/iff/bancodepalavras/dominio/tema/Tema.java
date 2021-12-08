@@ -22,13 +22,13 @@ public class Tema extends ObjetoDominioImpl {
 		
 	}
 	
-	public Tema Criar(Long id, String nome) {
+	public static Tema Criar(Long id, String nome) {
 		Tema tema = new Tema(id, nome);
 		return tema;
 		
 	}
 	
-	public Tema Recostruir(Long id, String nome) {
+	public static Tema Recostruir(Long id, String nome) {
 		Tema tema = new Tema(id, nome);
 		return tema;
 		
