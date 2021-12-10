@@ -43,36 +43,36 @@ public class Rodada extends ObjetoDominioImpl {
 	private Set<Letra> erradas;
 	
 
-	public int getMaxPalavras() {
+	public static int getMaxPalavras() {
 		return maxPalavras;
 	}
 
-	public void setMaxPalavras(int maxPalavras) {
-		this.maxPalavras = maxPalavras;
+	public static void setMaxPalavras(int maxPalavrasTemp) {
+		maxPalavras = maxPalavrasTemp;
 	}
 
-	public int getMaxErros() {
+	public static int getMaxErros() {
 		return maxErros;
 	}
 
-	public void setMaxErros(int maxErros) {
-		this.maxErros = maxErros;
+	public static void setMaxErros(int maxErrosTemp) {
+		maxErros = maxErrosTemp;
 	}
 
-	public int getPontosQuandoDescobreTodasAsPalavras() {
+	public static int getPontosQuandoDescobreTodasAsPalavras() {
 		return pontosQuandoDescobreTodasAsPalavras;
 	}
 
-	public void setPontosQuandoDescobreTodasAsPalavras(int pontosQuandoDescobreTodasAsPalavras) {
-		this.pontosQuandoDescobreTodasAsPalavras = pontosQuandoDescobreTodasAsPalavras;
+	public static void setPontosQuandoDescobreTodasAsPalavras(int pontosQDTP) {
+		pontosQuandoDescobreTodasAsPalavras = pontosQDTP;
 	}
 
-	public int getPontosPorLetraEncoberta() {
+	public static int getPontosPorLetraEncoberta() {
 		return pontosPorLetraEncoberta;
 	}
 
-	public void setPontosPorLetraEncoberta(int pontosPorLetraEncoberta) {
-		this.pontosPorLetraEncoberta = pontosPorLetraEncoberta;
+	public static void setPontosPorLetraEncoberta(int pontosPE) {
+		pontosPorLetraEncoberta = pontosPE;
 	}
 	
 	public static BonecoFactory getBonecoFactory() {
@@ -140,7 +140,7 @@ public class Rodada extends ObjetoDominioImpl {
 		
 	}
 	
-	public Rodada recostruir(Long id, List<Item> itens, List<Letra> erradas, Jogador jogador) {
+	public static Rodada recostruir(Long id, List<Item> itens, List<Letra> erradas, Jogador jogador) {
 		Rodada rodada = new Rodada(id, itens, erradas, jogador);
 		return rodada;
 	}

@@ -26,13 +26,13 @@ public class MemoriaPalavraRepository implements PalavraRepository {
 	}
 	
 	@Override
-	public Palavra getPorId(Long id) {
+	public Palavra getPorId(long id) {
 		for(Palavra palavraTemp: pool) {
 			if(palavraTemp.getId().equals(id)) {
 				return palavraTemp;
 			}
 		}
-		throw new RuntimeException("palana não encontrada no ID: " + id);
+		throw new RuntimeException("Palavraa não encontrada no ID: " + id);
 	}
 	
 	@Override
@@ -42,8 +42,9 @@ public class MemoriaPalavraRepository implements PalavraRepository {
 			if(palavraTemp.getTema() == tema) {
 				palavrasList.add(palavraTemp);
 			}
-			return palavrasList;
+			
 		}
+		return palavrasList;
 		
 	}
 	
@@ -88,6 +89,8 @@ public class MemoriaPalavraRepository implements PalavraRepository {
 		this.remover(palavra);
 		this.inserir(palavra);
 	}
+
+	
 	
 	
 

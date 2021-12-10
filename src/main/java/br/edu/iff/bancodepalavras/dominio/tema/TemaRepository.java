@@ -12,6 +12,8 @@ public interface TemaRepository extends Repository {
 	public Tema getPorId(Long id);
 
 	public List<Tema> getPorNome(String nome);
+	
+	public List<Tema> getTodos();
 
 	public void inserir(Tema tema) throws RepositoryException;
 

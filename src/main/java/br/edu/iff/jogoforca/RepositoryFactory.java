@@ -15,4 +15,5 @@ public interface RepositoryFactory {
 	  
 	public JogadorRepository getJogadorRepository();
 
+
 }

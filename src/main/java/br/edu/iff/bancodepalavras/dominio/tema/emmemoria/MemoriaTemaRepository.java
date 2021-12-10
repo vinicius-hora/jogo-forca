@@ -1,6 +1,7 @@
 package br.edu.iff.bancodepalavras.dominio.tema.emmemoria;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import br.edu.iff.bancodepalavras.dominio.palavra.PalavraRepository;
@@ -84,6 +85,12 @@ public class MemoriaTemaRepository implements TemaRepository {
 	public void atualizar(Tema tema) throws RepositoryException{
 		this.remover(tema);
 		this.inserir(tema);
+	}
+
+	@Override
+	public List<Tema> getTodos() {
+		// TODO Auto-generated method stub
+		return Collections.unmodifiableList(pool);
 	}
 
 	

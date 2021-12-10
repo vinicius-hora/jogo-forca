@@ -74,7 +74,7 @@ public class MemoriaJogadorRepository implements JogadorRepository {
 	}
 	
 	@Override
-	private void remover(Jogador jogador) throws RepositoryException {
+	public void remover(Jogador jogador) throws RepositoryException {
 		if(pool.contains(jogador)) {
 			pool.remove(jogador);
 		}
