@@ -6,22 +6,22 @@ import br.edu.iff.repository.RepositoryException;
 
 public class JogadorFactoryImpl extends EntityFactory implements JogadorFactory {
 	
-	private static JogadorFactory solInstance = null;
+	private static JogadorFactory soleInstance = null;
 	
-	public void CreateSolInstance(JogadorRepository jogadorRepository) {
-		solInstance = new JogadorFactoryImpl(jogadorRepository);
+	public static void createSoleInstance(JogadorRepository jogadorRepository) {
+		soleInstance = new JogadorFactoryImpl(jogadorRepository);
 	}
 	
-	public static JogadorFactory getSolInstance() {
-		if(solInstance == null) {
+	public static JogadorFactory getSoleInstance() {
+		if(soleInstance == null) {
 			 throw new RuntimeException(" jogador não inicializado");
 		}
 		else {
-			return solInstance;
+			return soleInstance;
 		}
 	}
 	
-	protected JogadorFactoryImpl(JogadorRepository jogadorRepository) {
+	private JogadorFactoryImpl(JogadorRepository jogadorRepository) {
 		super(jogadorRepository);
 		// TODO Auto-generated constructor stub
 	}

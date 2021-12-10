@@ -100,13 +100,16 @@ public class Item extends ObjetoDominioImpl {
 		return qtdeLetrasEncobertas() * valorPorLentraEncoberta;
 	}
 	
-	public Boolean descobriu() {
-		if(Acertou() == true || qtdeLetrasEncobertas() ==0) {
+	public boolean descobriu() {
+		if(acertou()) {
+			return true;  
+		}
+		if(qtdeLetrasEncobertas() == 0) {
 			return true;
 		}
-		else {
-			return false;
-		}
+		
+		return false;
+		
 		
 	}
 	
@@ -133,11 +136,11 @@ public class Item extends ObjetoDominioImpl {
 		
 	}
 	
-	public Boolean arriscou() {
+	public boolean arriscou() {
 		return palavraArriscada != null;
 	}
 	
-	public Boolean Acertou() {
+	public boolean acertou() {
 		if(arriscou() == palavra.comparar(palavraArriscada)) {
 			return true;
 		}
