@@ -18,8 +18,11 @@ public class BonecoTextoFactory implements BonecoFactory {
 		
 	}
 	
+	
+
 	@Override
-	public Boneco getBonecto() {
+	public Boneco getBoneco() {
+		// TODO Auto-generated method stub
 		return BonecoTexto.getSoleInstance();
 	}
 	

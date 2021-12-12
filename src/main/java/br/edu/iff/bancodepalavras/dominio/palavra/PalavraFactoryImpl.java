@@ -9,6 +9,15 @@ public class PalavraFactoryImpl extends EntityFactory implements PalavraFactory{
 
 	private static PalavraFactoryImpl soleInstance = null;
 	
+	//get e set
+	public static PalavraFactoryImpl getSoleInstance() {
+		if(soleInstance == null) {
+			throw new RuntimeException("criação de palavras nao iniciada");
+		}
+		
+		return soleInstance;
+	}
+	
 	//construtor
 	private PalavraFactoryImpl(Repository repository) {
 		super(repository);

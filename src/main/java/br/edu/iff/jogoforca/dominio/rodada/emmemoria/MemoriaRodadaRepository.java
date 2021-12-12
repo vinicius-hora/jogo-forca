@@ -18,13 +18,13 @@ import br.edu.iff.repository.RepositoryException;
 
 public class MemoriaRodadaRepository implements RodadaRepository {
 	
-	private static MemoriaRepositoryFactory soleInstance = null;
+	private static MemoriaRodadaRepository soleInstance = null;
 	private List<Rodada> pool;
 	
 	//get set
-	public static MemoriaRepositoryFactory getSoleInstance() {
+	public static MemoriaRodadaRepository getSoleInstance() {
 		if(soleInstance == null) {
-			soleInstance = new MemoriaRepositoryFactory();
+			soleInstance = new MemoriaRodadaRepository();
 		}
 		
 		return soleInstance;

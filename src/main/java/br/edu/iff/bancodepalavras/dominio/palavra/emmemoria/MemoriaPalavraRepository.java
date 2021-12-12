@@ -13,6 +13,14 @@ public class MemoriaPalavraRepository implements PalavraRepository {
 	
 	private static MemoriaPalavraRepository soleInstance = null;
 	
+	public static MemoriaPalavraRepository getSoleInstance() {
+		if(soleInstance == null) {
+			soleInstance = new MemoriaPalavraRepository();
+		}
+		return soleInstance;
+	}
+	
+	
 	private List<Palavra> pool;
 	
 	private MemoriaPalavraRepository() {
@@ -89,6 +97,8 @@ public class MemoriaPalavraRepository implements PalavraRepository {
 		this.remover(palavra);
 		this.inserir(palavra);
 	}
+
+	
 
 	
 	

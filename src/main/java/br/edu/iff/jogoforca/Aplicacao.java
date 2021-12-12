@@ -1,9 +1,13 @@
 package br.edu.iff.jogoforca;
 
+import br.edu.iff.bancodepalavras.dominio.palavra.Palavra;
+import br.edu.iff.bancodepalavras.dominio.palavra.PalavraFactory;
 import br.edu.iff.bancodepalavras.dominio.palavra.PalavraFactoryImpl;
 import br.edu.iff.bancodepalavras.dominio.tema.TemaFactory;
 import br.edu.iff.bancodepalavras.dominio.tema.TemaFactoryImpl;
+import br.edu.iff.jogoforca.dominio.jogador.JogadorFactory;
 import br.edu.iff.jogoforca.dominio.jogador.JogadorFactoryImpl;
+import br.edu.iff.jogoforca.dominio.rodada.Rodada;
 import br.edu.iff.jogoforca.dominio.rodada.RodadaFactory;
 import br.edu.iff.jogoforca.dominio.rodada.RodadaFactoryImpl;
 import br.edu.iff.jogoforca.dominio.rodada.sorteio.RodadaSorteioFactory;
@@ -44,38 +48,41 @@ public class Aplicacao {
 	}
 	
 	
-	public String getTipoRodadaFactory() {
-		return tipoRodadaFactory;
+	public String[] getTipoRodadaFactory() {
+		return TIPOS_RODADA_FACTORY;
 	}
 
 
 
-	public void setTipoRodadaFactory(String tipoRodadaFactory) {
-		this.tipoRodadaFactory = tipoRodadaFactory;
+	public void setTipoRodadaFactory(String tipoRF) {
+		tipoRodadaFactory = tipoRF;
+		setup();
 	}
 
 
 
-	public String getTipoRepositoryFactory() {
-		return tipoRepositoryFactory;
+	public String[] getTipoRepositoryFactory() {
+		return TIPOS_REPOSITORY_FACTORY;
 	}
 
 
 
-	public void setTipoRepositoryFactory(String tipoRepositoryFactory) {
-		this.tipoRepositoryFactory = tipoRepositoryFactory;
+	public void setTipoRepositoryFactory(String tipoRF) {
+		tipoRepositoryFactory = tipoRF;
+		setup();
 	}
 
 
 
-	public String getTipoElementoGraficoFactory() {
-		return tipoElementoGraficoFactory;
+	public String[] getTipoElementoGraficoFactory() {
+		return TIPOS_ELEMENTO_GRAFICO_FACTORY;
 	}
 
 
 
-	public void setTipoElementoGraficoFactory(String tipoElementoGraficoFactory) {
-		this.tipoElementoGraficoFactory = tipoElementoGraficoFactory;
+	public void setTipoElementoGraficoFactory(String tipoEF) {
+		tipoElementoGraficoFactory = tipoEF;
+		setup();
 	}
 
 
@@ -84,37 +91,27 @@ public class Aplicacao {
 		return repositoryFactory;
 	}
 
-
-
-	public void setRepositoryFactory(RepositoryFactory repositoryFactory) {
-		this.repositoryFactory = repositoryFactory;
-	}
-
-
-
 	public ElementoGraficoFactory getElementoGraficoFactory() {
 		return elementoGraficoFactory;
 	}
 
-
-
-	public void setElementoGraficoFactory(ElementoGraficoFactory elementoGraficoFactory) {
-		this.elementoGraficoFactory = elementoGraficoFactory;
-	}
-
-
-
 	public RodadaFactory getRodadaFactory() {
 		return rodadaFactory;
 	}
-
-
-
-	public void setRodadaFactory(RodadaFactory rodadaFactory) {
-		this.rodadaFactory = rodadaFactory;
+	
+	public TemaFactory getTemaFactory() {
+		return TemaFactoryImpl.getSoleInstance();
 	}
-
-
+	
+	public PalavraFactory getPalavraFactory() {
+		return PalavraFactoryImpl.getSoleInstance();
+	}
+	
+	public JogadorFactory getJogadorFactory(){
+		return JogadorFactoryImpl.getSoleInstance();
+	}
+	
+	
 
 	//construtor
 	private Aplicacao() {
@@ -132,7 +129,7 @@ public class Aplicacao {
 		}
 		//retorna a rodada escolhida, obs: somente sorteio
 		if(tipoRodadaFactory.equalsIgnoreCase(TIPOS_RODADA_FACTORY[0])) {
-			RodadaSorteioFactory.createSoleInstance(repositoryFactory.getPalavraRepository());
+			RodadaSorteioFactory.createSoleInstance(repositoryFactory.getRodadaRepository(), repositoryFactory.getTemaRepository(), repositoryFactory.getPalavraRepository());
 			rodadaFactory = RodadaSorteioFactory.getSoleInstance();
 		}
 		
@@ -147,8 +144,12 @@ public class Aplicacao {
 		TemaFactoryImpl.createSoleInstance(repositoryFactory.getTemaRepository());
 		PalavraFactoryImpl.createSoleInstance(repositoryFactory.getPalavraRepository());
 		JogadorFactoryImpl.createSoleInstance(repositoryFactory.getJogadorRepository());
-		RodadaFactoryImpl.createSoleInstance(repositoryFactory.getRodadaRepository());
+		Palavra.setLetraFactory(elementoGraficoFactory);
+		Rodada.setBonecoFactory(elementoGraficoFactory);
+		
 	}
+	
+	
 	
 	
 	

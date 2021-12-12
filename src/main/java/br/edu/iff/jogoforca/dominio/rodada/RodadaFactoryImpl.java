@@ -15,7 +15,7 @@ public abstract class RodadaFactoryImpl extends EntityFactory implements RodadaF
 	
 	private PalavraRepository palavraRepository;
 	
-	private RodadaRepository rodadaRepository;
+	
 	
 	//get e set
 	protected TemaRepository getTemaRepository() {
@@ -27,7 +27,7 @@ public abstract class RodadaFactoryImpl extends EntityFactory implements RodadaF
 	}
 	
 	protected RodadaRepository getRodadaRepository() {
-		return rodadaRepository;
+		return (RodadaRepository) getRepository();
 	}
 	
 	//construtor
