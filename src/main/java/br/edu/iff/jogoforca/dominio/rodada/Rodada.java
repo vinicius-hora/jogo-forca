@@ -22,7 +22,7 @@ public class Rodada extends ObjetoDominioImpl {
 
 	
 
-	private static int maxPalavras = 3;
+	private static int maxPalavras = 1;
 	
 	private static int maxErros = 10;
 	

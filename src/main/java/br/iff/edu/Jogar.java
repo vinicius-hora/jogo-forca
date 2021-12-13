@@ -32,18 +32,18 @@ public class Jogar {
 		Tema temaNomes = temaFactory.getTema("Nome de Pessoas");
 		PalavraFactory palavraNomesFactory = aplicacao.getPalavraFactory();
 		palavraNomesFactory.getPalavra("vinicius", temaNomes);
-		//palavraNomesFactory.getPalavra("gerson", temaNomes);
-		//palavraNomesFactory.getPalavra("brendo", temaNomes);
-		//palavraNomesFactory.getPalavra("lucas", temaNomes);
+		palavraNomesFactory.getPalavra("gerson", temaNomes);
+		palavraNomesFactory.getPalavra("brendo", temaNomes);
+		palavraNomesFactory.getPalavra("lucas", temaNomes);
 		
 		Tema temaPaisCidade = temaFactory.getTema("Nome de Pises e Cidades");
 		PalavraFactory palavraPaisCidadeFactory = aplicacao.getPalavraFactory();
 		palavraPaisCidadeFactory.getPalavra("brasil", temaPaisCidade);
-		//palavraPaisCidadeFactory.getPalavra("franca", temaPaisCidade);
-		//palavraPaisCidadeFactory.getPalavra("argentina", temaPaisCidade);
-		//palavraPaisCidadeFactory.getPalavra("salvador", temaPaisCidade);
-		//palavraPaisCidadeFactory.getPalavra("paris", temaPaisCidade);
-		//palavraPaisCidadeFactory.getPalavra("buenosaires", temaPaisCidade);
+		palavraPaisCidadeFactory.getPalavra("franca", temaPaisCidade);
+		palavraPaisCidadeFactory.getPalavra("argentina", temaPaisCidade);
+		palavraPaisCidadeFactory.getPalavra("salvador", temaPaisCidade);
+		palavraPaisCidadeFactory.getPalavra("paris", temaPaisCidade);
+		palavraPaisCidadeFactory.getPalavra("buenosaires", temaPaisCidade);
 		
 		//PalavraFactory palavraUsuarioFactory = aplicacao.getPalavraFactory();
 		
@@ -57,11 +57,11 @@ public class Jogar {
 			case 1:
 				System.out.println("Entre com o nome: ");
 				String nomeJogador = sc.next();
-				System.out.println(nomeJogador);
+				
 				Jogador jogador = jogadorFactory.getJogador(nomeJogador);
-				System.out.println(nomeJogador);
+				
 				Rodada rodada = rodadaFactory.getRodada(jogador);
-				System.out.println(nomeJogador);
+				
 				jogar(rodada, jogador);
 				//rodadaAppService.salvarRodada(rodada);
 				
@@ -69,6 +69,8 @@ public class Jogar {
 				break;
 
 			default:
+				System.out.println("Obrigado por jogar");
+				System.out.println("Geupo: Vinicius, Gerson, Brendo e Lucas");
 				break;
 			}
 			
@@ -125,7 +127,7 @@ public class Jogar {
                 List<String> palavras = new ArrayList<>();
 
                 for (int i = 1; i <= rodada.getNumPalavras(); i++) {
-                    System.out.println("Qual a " + i + "ª palavra? ");
+                    System.out.println("Qual a palavra? ");
                     String palavra = digitar.next();
                     palavras.add(palavra);
                 }

@@ -15,7 +15,7 @@ public class LetraTexto extends Letra {
 	
 	@Override
 	public void exibir(Object object) {
-		System.out.println(this.getCodigo());
+		System.out.print(this.getCodigo());
 	}
 
 	
