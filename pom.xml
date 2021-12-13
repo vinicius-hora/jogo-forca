@@ -4,4 +4,11 @@
   <artifactId>br.iff.edu</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>JogoForca</name>
+  <dependencies>
+  	<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+		    <version>2.0.3.RELEASE</version>
+		</dependency>
+  </dependencies>
 </project>

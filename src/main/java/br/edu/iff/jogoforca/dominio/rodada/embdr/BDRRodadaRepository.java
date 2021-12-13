@@ -19,7 +19,11 @@ public class BDRRodadaRepository implements RodadaRepository {
 		
 		return soleInstance;
 	}
-
+	//construtor
+	private BDRRodadaRepository() {
+		// TODO Auto-generated constructor stub
+	}
+	//metodos
 	@Override
 	public long getProximoId() {
 		// TODO Auto-generated method stub

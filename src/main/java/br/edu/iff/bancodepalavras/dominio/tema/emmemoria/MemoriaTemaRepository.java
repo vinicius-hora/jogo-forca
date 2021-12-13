@@ -17,7 +17,7 @@ public class MemoriaTemaRepository implements TemaRepository {
 	private List<Tema> pool;
 	
 	private MemoriaTemaRepository() {
-		pool = new ArrayList<Tema>();
+		pool = new ArrayList<>();
 	}
 
 	public static MemoriaTemaRepository getSoleInstance() {
@@ -29,8 +29,7 @@ public class MemoriaTemaRepository implements TemaRepository {
 	
 	@Override
 	public long getProximoId() {
-		int contador = pool.size() + 1;
-		return contador;
+		return pool.size() + 1;
 	}
 	@Override
 	public Tema getPorId(Long id) {
@@ -45,7 +44,7 @@ public class MemoriaTemaRepository implements TemaRepository {
 	
 	@Override
 	public List<Tema> getPorNome(String nome){
-		List<Tema> temaList = new ArrayList<Tema>();
+		List<Tema> temaList = new ArrayList<>();
 		for(Tema temaTemp: pool) {
 			//deixa as strings maiuscula para comparação
 			String temaUp = temaTemp.getNome().toUpperCase();

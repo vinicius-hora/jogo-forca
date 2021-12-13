@@ -12,7 +12,7 @@ public abstract class LetraFactoryImpl {
 	}
 	
 	public final Letra getLetra(char codigo) {
-		int i = codigo;
+		int i = codigo - 'a';
 		Letra result = this.pool[i];
 		if(result == null) {
 			result = this.criarLetra(codigo);

@@ -24,7 +24,7 @@ public class MemoriaPalavraRepository implements PalavraRepository {
 	private List<Palavra> pool;
 	
 	private MemoriaPalavraRepository() {
-		pool = new ArrayList<Palavra>();
+		pool = new ArrayList<>();
 	}
 	
 	@Override
@@ -45,7 +45,7 @@ public class MemoriaPalavraRepository implements PalavraRepository {
 	
 	@Override
 	public List<Palavra> getPorTema(Tema tema){
-		List<Palavra> palavrasList = new ArrayList<Palavra>();
+		List<Palavra> palavrasList = new ArrayList<>();
 		for(Palavra palavraTemp: pool) {
 			if(palavraTemp.getTema() == tema) {
 				palavrasList.add(palavraTemp);

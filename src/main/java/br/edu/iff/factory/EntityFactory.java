@@ -1,6 +1,9 @@
 package br.edu.iff.factory;
 
-import br.edu.iff.bancodepalavras.dominio.tema.Tema;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import br.edu.iff.repository.Repository;
 
 public abstract class EntityFactory {
@@ -16,8 +19,8 @@ public abstract class EntityFactory {
 	}
 	
 	protected Long getProximoId() {
-		return repository.getProximoId();
-	}
+	    return repository.getProximoId();
+	  }
 
 	
 

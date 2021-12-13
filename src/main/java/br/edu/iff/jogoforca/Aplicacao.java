@@ -28,9 +28,9 @@ public class Aplicacao {
 	
 	private String tipoRodadaFactory = TIPOS_RODADA_FACTORY[0];
 	
-	private String tipoRepositoryFactory = TIPOS_REPOSITORY_FACTORY[0];
+	private String tipoRepositoryFactory = TIPOS_REPOSITORY_FACTORY[1];
 	
-	private String tipoElementoGraficoFactory = TIPOS_ELEMENTO_GRAFICO_FACTORY[0];
+	private String tipoElementoGraficoFactory = TIPOS_ELEMENTO_GRAFICO_FACTORY[1];
 	
 	private RepositoryFactory repositoryFactory;
 	
@@ -115,7 +115,7 @@ public class Aplicacao {
 
 	//construtor
 	private Aplicacao() {
-		
+		setup();
 	}
 	
 	//metodos

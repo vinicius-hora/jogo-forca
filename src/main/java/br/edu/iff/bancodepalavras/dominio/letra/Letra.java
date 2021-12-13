@@ -23,7 +23,23 @@ public abstract class Letra {
 	public final String toString() {
 		return "Letra" + codigo ;
 	}
+	
+	@Override
+	  public boolean equals(Object o) {
+	    if (!(o instanceof Letra)) {
+	      return false;
+	    }
+	    
+	    Letra outra = (Letra) o;
+	    
+	    return this.codigo == outra.codigo && this.getClass().equals(outra.getClass());
+	  }
 
+	  @Override
+	  public int hashCode() {
+	    return this.codigo + this.getClass().hashCode();
+	  }
+	/*
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -45,6 +61,7 @@ public abstract class Letra {
 			return false;
 		return true;
 	}
+	*/
 	
 	
 }

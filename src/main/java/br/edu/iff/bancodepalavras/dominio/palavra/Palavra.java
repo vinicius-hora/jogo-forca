@@ -92,7 +92,7 @@ public class Palavra extends ObjetoDominioImpl {
 	}
 	
 	public List<Integer> tentar(char codigo){
-		List<Integer> posicoesEncotradas = new ArrayList<Integer>();
+		List<Integer> posicoesEncotradas = new ArrayList<>();
 		for(int contador = 0; contador < palavras.size(); contador++) {
 			if(palavras.get(contador).equals(codigo)) {
 				posicoesEncotradas.add(contador);
@@ -101,7 +101,7 @@ public class Palavra extends ObjetoDominioImpl {
 		return posicoesEncotradas;
 	}
 	
-	public Boolean comparar(String palavra) {
+	public boolean comparar(String palavra) {
 		for(int contador = 0; contador < this.palavras.size(); contador++) {
 			if(this.palavras.get(contador).getCodigo() != palavra.charAt(contador)) {
 				return false;

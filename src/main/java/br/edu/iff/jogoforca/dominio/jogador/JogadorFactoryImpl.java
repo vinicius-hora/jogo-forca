@@ -6,19 +6,19 @@ import br.edu.iff.repository.RepositoryException;
 
 public class JogadorFactoryImpl extends EntityFactory implements JogadorFactory {
 	
-	private static JogadorFactory soleInstance = null;
+	private static JogadorFactoryImpl soleInstance = null;
 	
 	public static void createSoleInstance(JogadorRepository jogadorRepository) {
 		soleInstance = new JogadorFactoryImpl(jogadorRepository);
 	}
 	
-	public static JogadorFactory getSoleInstance() {
+	public static JogadorFactoryImpl getSoleInstance() {
 		if(soleInstance == null) {
 			 throw new RuntimeException(" jogador não inicializado");
 		}
-		else {
-			return soleInstance;
-		}
+		
+		return soleInstance;
+		
 	}
 	
 	private JogadorFactoryImpl(JogadorRepository jogadorRepository) {
@@ -34,8 +34,8 @@ public class JogadorFactoryImpl extends EntityFactory implements JogadorFactory 
 	@Override
 	public Jogador getJogador(String nome) {
 		
-		Jogador jogador = new Jogador(null, nome);
-		Jogador.Criar(getProximoId(), nome);
+		Jogador jogador = Jogador.criar(getProximoId(), nome);
+		
 		try {
 			getJogadorRepository().inserir(jogador);
 		} catch ( RepositoryException repositoryException) {

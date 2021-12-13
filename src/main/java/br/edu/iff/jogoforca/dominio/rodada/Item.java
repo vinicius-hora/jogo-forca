@@ -41,7 +41,7 @@ public class Item extends ObjetoDominioImpl {
 		
 	}
 	
-	private Item reconstruir(Long id, Palavra palavra, List<Integer> posicoesDescobertas, String palavraArriscada) {
+	public static Item reconstruir(int id, Palavra palavra, List<Integer> posicoesDescobertas, String palavraArriscada) {
 		Item item = new Item(id, palavra, posicoesDescobertas, palavraArriscada);
 		return item;
 	}
@@ -56,7 +56,7 @@ public class Item extends ObjetoDominioImpl {
 		
 	}
 
-	private Item(Long id, Palavra palavra, List<Integer> posicoesDescobertas, String palavraArriscada) {
+	private Item(int id, Palavra palavra, List<Integer> posicoesDescobertas, String palavraArriscada) {
 		super(Long.valueOf(id));
 		this.palavra = palavra;
 		this.palavraArriscada = palavraArriscada;

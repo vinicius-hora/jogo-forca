@@ -3,16 +3,10 @@ package br.edu.iff.jogoforca.dominio.jogador;
 import br.edu.iff.dominio.ObjetoDominioImpl;
 
 public class Jogador extends ObjetoDominioImpl {
-	
-
-	public Jogador(Long id) {
-		super(id);
-		// TODO Auto-generated constructor stub
-	}
 
 	private String nome;
 	
-	private int putuacao = 0;
+	private int pontuacao;
 
 	
 	//get e set
@@ -24,22 +18,23 @@ public class Jogador extends ObjetoDominioImpl {
 		this.nome = nome;
 	}
 
-	public int getPutuacao() {
-		return putuacao;
+	public int getPontuacao() {
+		return pontuacao;
 	}
 
-	public void setPutuacao(int putuacao) {
-		this.putuacao = putuacao;
+	public void setPontuacao(int putuacao) {
+		this.pontuacao = putuacao;
 	}
 	
-	public static Jogador Criar(Long id, String nome) {
+	
+	public static Jogador criar(Long id, String nome) {
 		Jogador jogador = new Jogador(id, nome);
 		return jogador;
 		
 		
 	}
 	
-	public static Jogador Recostruir(Long id, String nome, int pontuacao) {
+	public static Jogador recostruir(Long id, String nome, int pontuacao) {
 		Jogador jogador = new Jogador(id, nome, pontuacao);
 		return jogador;
 		
@@ -49,10 +44,10 @@ public class Jogador extends ObjetoDominioImpl {
 	private Jogador(Long id, String nome, int putuacao) {
 		super(id);
 		this.nome = nome;
-		this.putuacao = putuacao;
+		this.pontuacao = putuacao;
 	}
 	
-	public Jogador(Long id, String nome) {
+	private Jogador(Long id, String nome) {
 		
 		super(id);
 		this.nome = nome;

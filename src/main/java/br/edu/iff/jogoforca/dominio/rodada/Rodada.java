@@ -189,7 +189,7 @@ public class Rodada extends ObjetoDominioImpl {
 			erradas.add(letraFactory.getLetra(codigo));
 		}
 		if(encerrou()) {
-			this.jogador.setPutuacao(this.calcularPontos());
+			this.jogador.setPontuacao(this.calcularPontos());
 		}
 		
 	}
@@ -203,7 +203,7 @@ public class Rodada extends ObjetoDominioImpl {
 			itens.get(contador).arriscar(palavras.get(contador));
 		}
 		if(encerrou()) {
-			this.jogador.setPutuacao(this.calcularPontos());
+			this.jogador.setPontuacao(this.calcularPontos());
 		}
 	}
 	

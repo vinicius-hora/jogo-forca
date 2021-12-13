@@ -7,7 +7,6 @@ import br.edu.iff.repository.RepositoryException;
 
 public interface TemaRepository extends Repository {
 
-	public long getProximoId();
 
 	public Tema getPorId(Long id);
 

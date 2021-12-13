@@ -17,9 +17,9 @@ public class RodadaAppService {
 	
 	
 	//construtor
-	public RodadaAppService(RodadaRepository rodadaRepository, RodadaFactory rodadaFactory,
+	private RodadaAppService(RodadaRepository rodadaRepository, RodadaFactory rodadaFactory,
 			JogadorRepository jogadorRepository) {
-		super();
+		
 		this.rodadaRepository = rodadaRepository;
 		this.rodadaFactory = rodadaFactory;
 		this.jogadorRepository = jogadorRepository;
@@ -39,6 +39,7 @@ public class RodadaAppService {
 	}
 	
 	public Rodada novaRodada(Long idJogador) throws JogadorNaoEncontradoException{
+		
 		try {
 			Jogador jogador = jogadorRepository.getPorId(idJogador);
 			return rodadaFactory.getRodada(jogador);
@@ -50,7 +51,7 @@ public class RodadaAppService {
 		throw new JogadorNaoEncontradoException("Jogador não encontrado");
 	}
 	
-	public Rodada novaRodada(String nomeJogador) throws JogadorNaoEncontradoException{
+	public Rodada novaRodadaNome(String nomeJogador) throws JogadorNaoEncontradoException{
 		
 		try {
 			Jogador jogador = jogadorRepository.getPorNome(nomeJogador);

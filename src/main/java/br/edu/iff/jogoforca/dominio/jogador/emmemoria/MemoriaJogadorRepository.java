@@ -10,7 +10,7 @@ import br.edu.iff.repository.RepositoryException;
 
 public class MemoriaJogadorRepository implements JogadorRepository {
 	
-	public static MemoriaJogadorRepository soleInstance = null;
+	private static MemoriaJogadorRepository soleInstance = null;
 	
 	private List<Jogador> pool;
 	
@@ -26,12 +26,10 @@ public class MemoriaJogadorRepository implements JogadorRepository {
 	}
 	
 	
-	@Override
-	public long getProximoId() {
-		int contador = pool.size() + 1;
-		return contador;
-	}
-	
+	 @Override
+	  public long getProximoId() {
+	    return pool.size() + 1;
+	  }
 	
 	
 	@Override
