@@ -6,6 +6,7 @@ import br.edu.iff.bancodepalavras.dominio.tema.TemaRepository;
 import br.edu.iff.bancodepalavras.dominio.tema.emmemoria.MemoriaTemaRepository;
 import br.edu.iff.jogoforca.RepositoryFactory;
 import br.edu.iff.jogoforca.dominio.jogador.JogadorRepository;
+import br.edu.iff.jogoforca.dominio.jogador.emmemoria.MemoriaJogadorRepository;
 import br.edu.iff.jogoforca.dominio.rodada.RodadaRepository;
 import br.edu.iff.jogoforca.dominio.rodada.emmemoria.MemoriaRodadaRepository;
 
@@ -48,7 +49,7 @@ public class MemoriaRepositoryFactory implements RepositoryFactory {
 	@Override
 	public JogadorRepository getJogadorRepository() {
 		// TODO Auto-generated method stub
-		return null;
+		return MemoriaJogadorRepository.getSoleInstance();
 	}
 
 }

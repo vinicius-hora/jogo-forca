@@ -94,7 +94,7 @@ public class Palavra extends ObjetoDominioImpl {
 	public List<Integer> tentar(char codigo){
 		List<Integer> posicoesEncotradas = new ArrayList<>();
 		for(int contador = 0; contador < palavras.size(); contador++) {
-			if(palavras.get(contador).equals(codigo)) {
+			if(palavras.get(contador).getCodigo() == codigo) {
 				posicoesEncotradas.add(contador);
 			}
 		}

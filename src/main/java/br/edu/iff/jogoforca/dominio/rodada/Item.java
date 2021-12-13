@@ -141,12 +141,7 @@ public class Item extends ObjetoDominioImpl {
 	}
 	
 	public boolean acertou() {
-		if(arriscou() == palavra.comparar(palavraArriscada)) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		 return arriscou() ? palavra.comparar(palavraArriscada) : false;
 		
 	}
 }

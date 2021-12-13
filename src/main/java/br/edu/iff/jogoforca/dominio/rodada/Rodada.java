@@ -126,7 +126,7 @@ public class Rodada extends ObjetoDominioImpl {
 		this.jogador = jogador;
 		this.letrasCertas = new HashSet<Letra>();
 		this.erradas = new HashSet<Letra>();
-		this.itens = new ArrayList<Item>(itens.size());
+		this.itens = new ArrayList<Item>(palavras.size());
 		
 		for(int contador = 0; contador < palavras.size(); contador++) {
 			this.itens.add(Item.criar(contador, palavras.get(contador)));

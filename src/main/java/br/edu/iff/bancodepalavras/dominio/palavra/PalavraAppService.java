@@ -37,7 +37,7 @@ public class PalavraAppService {
 		Aplicacao aplicacaoTemp = Aplicacao.getSoleInstance();
 		if(palavraTemp == null) {
 			TemaFactory temaFactory = aplicacaoTemp.getTemaFactory();
-			Tema tema = temaFactory.getTema("Técnologia");
+			Tema tema = temaFactory.getTema("Todos");
 			Palavra novaPalavraTemp = palavraFactory.getPalavra(palavra, tema);
 			try {
 				palavraRepository.inserir(novaPalavraTemp);

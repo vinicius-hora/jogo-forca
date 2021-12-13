@@ -18,7 +18,7 @@ public class Jogar {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
+		boolean opcao = true;  
 		Aplicacao aplicacao = Aplicacao.getSoleInstance();
 		int escolha = 0 ;
 		
@@ -30,18 +30,18 @@ public class Jogar {
 		Tema temaNomes = temaFactory.getTema("Nome de Pessoas");
 		PalavraFactory palavraNomesFactory = aplicacao.getPalavraFactory();
 		palavraNomesFactory.getPalavra("vinicius", temaNomes);
-		palavraNomesFactory.getPalavra("gerson", temaNomes);
-		palavraNomesFactory.getPalavra("brendo", temaNomes);
-		palavraNomesFactory.getPalavra("lucas", temaNomes);
+		//palavraNomesFactory.getPalavra("gerson", temaNomes);
+		//palavraNomesFactory.getPalavra("brendo", temaNomes);
+		//palavraNomesFactory.getPalavra("lucas", temaNomes);
 		
 		Tema temaPaisCidade = temaFactory.getTema("Nome de Pises e Cidades");
 		PalavraFactory palavraPaisCidadeFactory = aplicacao.getPalavraFactory();
 		palavraPaisCidadeFactory.getPalavra("brasil", temaPaisCidade);
-		palavraPaisCidadeFactory.getPalavra("franca", temaPaisCidade);
-		palavraPaisCidadeFactory.getPalavra("argentina", temaPaisCidade);
-		palavraPaisCidadeFactory.getPalavra("salvador", temaPaisCidade);
-		palavraPaisCidadeFactory.getPalavra("paris", temaPaisCidade);
-		palavraPaisCidadeFactory.getPalavra("buenosaires", temaPaisCidade);
+		//palavraPaisCidadeFactory.getPalavra("franca", temaPaisCidade);
+		//palavraPaisCidadeFactory.getPalavra("argentina", temaPaisCidade);
+		//palavraPaisCidadeFactory.getPalavra("salvador", temaPaisCidade);
+		//palavraPaisCidadeFactory.getPalavra("paris", temaPaisCidade);
+		//palavraPaisCidadeFactory.getPalavra("buenosaires", temaPaisCidade);
 		
 		//PalavraFactory palavraUsuarioFactory = aplicacao.getPalavraFactory();
 		
@@ -76,9 +76,10 @@ public class Jogar {
 
 	}
 	private static void jogar(Rodada rodada, Jogador jogador) {
+		
 		Scanner sc = new Scanner(System.in);
 		
-		while(rodada.encerrou() != false) {
+		while(rodada.encerrou() == false) {
 			System.out.println("Tema: " + rodada.getTema().getNome());
 			System.out.println("Jogador: " + jogador.getNome());
 			
@@ -97,9 +98,9 @@ public class Jogar {
             rodada.exibirBoneco(null);
             System.out.println();
 
-            System.out.println("Selecione a opção desejada: ");
-            System.out.println("(1) Digitar uma letra");
-            System.out.println("(2) Já sabe todas as palavras? Arriscar");
+            System.out.println("Selecione ima opção: ");
+            System.out.println("1 - Digitar uma letra");
+            System.out.println("2 - Arriscar palavra");
 
             String escolha = sc.next();
             
@@ -126,21 +127,25 @@ public class Jogar {
                 rodada.arriscar(palavras);
                 System.out.println("");
             }
-            sc.close();
             
-            
+           
         }
 
-        if (rodada.descobriu()) {
-            System.out.println("Parabéns, você descobriu todas as palavras!");
+        if (rodada.descobriu() == true) {
+            System.out.println("Parabéns");
             rodada.exibirPalavras(null);
+            rodada.encerrou();
         } else {
-            System.out.println("ERROU!! Você não descobriu as palavras.");
+            System.out.println("Você não consegui, a palavra era: ");
+            rodada.exibirPalavras(null);
+            rodada.encerrou();
         }
 
-        System.out.println("Sua pontuação nessa rodada foi: " + rodada.calcularPontos());
+        System.out.println("Seus pontos foram: " + rodada.calcularPontos());
+        rodada.encerrou();
         
 		}
+		
 	
 		
 	
