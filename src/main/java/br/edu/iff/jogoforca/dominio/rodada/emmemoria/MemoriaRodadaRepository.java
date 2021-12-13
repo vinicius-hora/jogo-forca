@@ -3,17 +3,9 @@ package br.edu.iff.jogoforca.dominio.rodada.emmemoria;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.iff.bancodepalavras.dominio.palavra.PalavraRepository;
-import br.edu.iff.bancodepalavras.dominio.palavra.emmemoria.MemoriaPalavraRepository;
-import br.edu.iff.bancodepalavras.dominio.tema.TemaRepository;
-import br.edu.iff.bancodepalavras.dominio.tema.emmemoria.MemoriaTemaRepository;
-import br.edu.iff.jogoforca.RepositoryFactory;
 import br.edu.iff.jogoforca.dominio.jogador.Jogador;
-import br.edu.iff.jogoforca.dominio.jogador.JogadorRepository;
-import br.edu.iff.jogoforca.dominio.jogador.emmemoria.MemoriaJogadorRepository;
 import br.edu.iff.jogoforca.dominio.rodada.Rodada;
 import br.edu.iff.jogoforca.dominio.rodada.RodadaRepository;
-import br.edu.iff.jogoforca.emmemoria.MemoriaRepositoryFactory;
 import br.edu.iff.repository.RepositoryException;
 
 public class MemoriaRodadaRepository implements RodadaRepository {
@@ -33,8 +25,7 @@ public class MemoriaRodadaRepository implements RodadaRepository {
 	
 	@Override
 	public long getProximoId() {
-		int id = pool.size() +1;
-		return id;
+		return pool.size() + 1;
 	}
 	
 	@Override

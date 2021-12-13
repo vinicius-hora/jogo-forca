@@ -7,15 +7,14 @@ import br.edu.iff.repository.Repository;
 import br.edu.iff.repository.RepositoryException;
 
 public interface RodadaRepository extends Repository {
-	
-	public Rodada getPorId(Long id);
-	
-	public List<Rodada> getPorJogador(Jogador jogador);
-	
-	public void inserir(Rodada rodada) throws RepositoryException;
-	
-	public void atualizar(Rodada rodada) throws RepositoryException;
-	
-	public void remover(Rodada rodada) throws RepositoryException;
 
+  public Rodada getPorId(Long id);
+
+  public List<Rodada> getPorJogador(Jogador jogador);
+
+  public void inserir(Rodada rodada) throws RepositoryException;
+
+  public void atualizar(Rodada rodada) throws RepositoryException;
+  
+  public void remover(Rodada rodada) throws RepositoryException;
 }

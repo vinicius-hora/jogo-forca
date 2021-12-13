@@ -1,7 +1,6 @@
 package br.edu.iff.jogoforca.dominio.jogador;
 
 import br.edu.iff.factory.EntityFactory;
-import br.edu.iff.repository.Repository;
 import br.edu.iff.repository.RepositoryException;
 
 public class JogadorFactoryImpl extends EntityFactory implements JogadorFactory {

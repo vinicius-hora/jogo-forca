@@ -22,7 +22,7 @@ public class MemoriaJogadorRepository implements JogadorRepository {
 	}
 	
 	private MemoriaJogadorRepository() {
-		pool = new ArrayList<Jogador>();
+		pool = new ArrayList<>();
 	}
 	
 	
@@ -35,7 +35,7 @@ public class MemoriaJogadorRepository implements JogadorRepository {
 	@Override
 	public Jogador getPorId(Long id) {
 		for(Jogador jogadorTemp: pool) {
-			if(jogadorTemp.getId() == id) {
+			if(jogadorTemp.getId().equals(id)) {
 				return jogadorTemp;
 			}
 		}
@@ -46,7 +46,7 @@ public class MemoriaJogadorRepository implements JogadorRepository {
 	@Override
 	public Jogador getPorNome(String nome) {
 		for(Jogador jogadorTemp: pool) {
-			if(jogadorTemp.getNome() == nome) {
+			if(jogadorTemp.getNome().equals(nome)) {
 				return jogadorTemp;
 			}
 		}

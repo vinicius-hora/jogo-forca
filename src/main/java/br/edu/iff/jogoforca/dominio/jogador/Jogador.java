@@ -22,8 +22,8 @@ public class Jogador extends ObjetoDominioImpl {
 		return pontuacao;
 	}
 
-	public void setPontuacao(int putuacao) {
-		this.pontuacao = putuacao;
+	public void setPontuacao(int pontuacao) {
+		this.pontuacao = pontuacao;
 	}
 	
 	
@@ -41,10 +41,10 @@ public class Jogador extends ObjetoDominioImpl {
 		
 	}
 
-	private Jogador(Long id, String nome, int putuacao) {
+	private Jogador(Long id, String nome, int pontuacao) {
 		super(id);
 		this.nome = nome;
-		this.pontuacao = putuacao;
+		this.pontuacao = pontuacao;
 	}
 	
 	private Jogador(Long id, String nome) {

@@ -12,15 +12,17 @@ import br.edu.iff.jogoforca.Aplicacao;
 import br.edu.iff.jogoforca.dominio.jogador.Jogador;
 import br.edu.iff.jogoforca.dominio.jogador.JogadorFactory;
 import br.edu.iff.jogoforca.dominio.rodada.Rodada;
+import br.edu.iff.jogoforca.dominio.rodada.RodadaAppService;
 import br.edu.iff.jogoforca.dominio.rodada.RodadaFactory;
+import br.edu.iff.repository.RepositoryException;
 
 public class Jogar {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		boolean opcao = true;  
+	public static void main(String[] args) throws RepositoryException {
+		Scanner sc = new Scanner(System.in); 
 		Aplicacao aplicacao = Aplicacao.getSoleInstance();
-		int escolha = 0 ;
+		RodadaAppService rodadaAppService = RodadaAppService.getSoleInstance();
+		int opcao;
 		
 		JogadorFactory jogadorFactory = aplicacao.getJogadorFactory();
 		TemaFactory temaFactory = aplicacao.getTemaFactory();
@@ -50,15 +52,19 @@ public class Jogar {
 			System.out.println("1 - jogar");
 			System.out.println("0 - sair");
 			System.out.println("digite uma opção: ");
-			escolha = sc.nextInt();
-			switch (escolha) {
+			opcao = sc.nextInt();
+			switch (opcao) {
 			case 1:
 				System.out.println("Entre com o nome: ");
-				System.out.println();
 				String nomeJogador = sc.next();
+				System.out.println(nomeJogador);
 				Jogador jogador = jogadorFactory.getJogador(nomeJogador);
+				System.out.println(nomeJogador);
 				Rodada rodada = rodadaFactory.getRodada(jogador);
+				System.out.println(nomeJogador);
 				jogar(rodada, jogador);
+				//rodadaAppService.salvarRodada(rodada);
+				
 				
 				break;
 
@@ -66,7 +72,7 @@ public class Jogar {
 				break;
 			}
 			
-		}while(escolha!= 0);
+		}while(opcao!= 0);
 		
 		sc.close();
 		
@@ -77,7 +83,7 @@ public class Jogar {
 	}
 	private static void jogar(Rodada rodada, Jogador jogador) {
 		
-		Scanner sc = new Scanner(System.in);
+		Scanner digitar = new Scanner(System.in);
 		
 		while(rodada.encerrou() == false) {
 			System.out.println("Tema: " + rodada.getTema().getNome());
@@ -102,11 +108,11 @@ public class Jogar {
             System.out.println("1 - Digitar uma letra");
             System.out.println("2 - Arriscar palavra");
 
-            String escolha = sc.next();
+            String escolha = digitar.next();
             
             if (escolha.equalsIgnoreCase("1")) {
                 System.out.print("Digite uma letra: ");
-                char codigo = sc.next().charAt(0);
+                char codigo = digitar.next().charAt(0);
 
                 if (codigo >= 'A' && codigo <= 'Z') {
                     codigo = (char)(codigo+32);
@@ -120,7 +126,7 @@ public class Jogar {
 
                 for (int i = 1; i <= rodada.getNumPalavras(); i++) {
                     System.out.println("Qual a " + i + "ª palavra? ");
-                    String palavra = sc.next();
+                    String palavra = digitar.next();
                     palavras.add(palavra);
                 }
 
@@ -134,15 +140,16 @@ public class Jogar {
         if (rodada.descobriu() == true) {
             System.out.println("Parabéns");
             rodada.exibirPalavras(null);
-            rodada.encerrou();
+            
         } else {
             System.out.println("Você não consegui, a palavra era: ");
             rodada.exibirPalavras(null);
-            rodada.encerrou();
+            
+            
         }
 
         System.out.println("Seus pontos foram: " + rodada.calcularPontos());
-        rodada.encerrou();
+        
         
 		}
 		

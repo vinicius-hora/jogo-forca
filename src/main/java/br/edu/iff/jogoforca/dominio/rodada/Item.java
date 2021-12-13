@@ -101,14 +101,7 @@ public class Item extends ObjetoDominioImpl {
 	}
 	
 	public boolean descobriu() {
-		if(acertou()) {
-			return true;  
-		}
-		if(qtdeLetrasEncobertas() == 0) {
-			return true;
-		}
-		
-		return false;
+		return acertou() || qtdeLetrasEncobertas() == 0;
 		
 		
 	}

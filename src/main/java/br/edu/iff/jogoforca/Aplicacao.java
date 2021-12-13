@@ -9,7 +9,6 @@ import br.edu.iff.jogoforca.dominio.jogador.JogadorFactory;
 import br.edu.iff.jogoforca.dominio.jogador.JogadorFactoryImpl;
 import br.edu.iff.jogoforca.dominio.rodada.Rodada;
 import br.edu.iff.jogoforca.dominio.rodada.RodadaFactory;
-import br.edu.iff.jogoforca.dominio.rodada.RodadaFactoryImpl;
 import br.edu.iff.jogoforca.dominio.rodada.sorteio.RodadaSorteioFactory;
 import br.edu.iff.jogoforca.embdr.BDRRepositoryFactory;
 import br.edu.iff.jogoforca.emmemoria.MemoriaRepositoryFactory;

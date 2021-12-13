@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import javax.management.RuntimeErrorException;
-
 import br.edu.iff.bancodepalavras.dominio.palavra.Palavra;
-import br.edu.iff.bancodepalavras.dominio.palavra.PalavraAppService;
 import br.edu.iff.bancodepalavras.dominio.palavra.PalavraRepository;
 import br.edu.iff.bancodepalavras.dominio.tema.Tema;
 import br.edu.iff.bancodepalavras.dominio.tema.TemaRepository;
@@ -49,7 +46,7 @@ public class RodadaSorteioFactory extends RodadaFactoryImpl {
 		int palavrasMaximo = Rodada.getMaxPalavras();
 		int palavrasMinimo = 1;
 		int totalPalavras = randomTemp.nextInt((palavrasMaximo+1) - palavrasMinimo) + palavrasMinimo;
-		List<Palavra> palavrasEscolhidas = new ArrayList();
+		List<Palavra> palavrasEscolhidas = new ArrayList<Palavra>();
 		Palavra palavraTemp = null;
 		
 		
