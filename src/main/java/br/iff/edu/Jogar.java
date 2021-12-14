@@ -70,7 +70,7 @@ public class Jogar {
 
 			default:
 				System.out.println("Obrigado por jogar");
-				System.out.println("Geupo: Vinicius, Gerson, Brendo e Lucas");
+				System.out.println("Grupo: Vinicius, Gerson, Brendo e Lucas");
 				break;
 			}
 			
@@ -91,10 +91,10 @@ public class Jogar {
 			System.out.println("Tema: " + rodada.getTema().getNome());
 			System.out.println("Jogador: " + jogador.getNome());
 			
-			System.out.println("Numero de tentativas: ");
+			System.out.println("Letras arriscadas: ");
 			for(Letra letraTentativa: rodada.getTentativas()) {
 				letraTentativa.exibir(null);
-				System.out.println("");
+				System.out.print(" ");
 			}
 			System.out.println();
             
@@ -144,9 +144,9 @@ public class Jogar {
             rodada.exibirPalavras(null);
             
         } else {
-            System.out.println("Você não consegui, a palavra era: ");
+            System.out.println("Você não conseguiu, a palavra era: ");
             rodada.exibirPalavras(null);
-            
+            rodada.exibirBoneco(null);
             
         }
 
